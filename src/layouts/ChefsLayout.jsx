@@ -6,24 +6,21 @@ import LeftNav from '../pages/Shared/LeftNav/LeftNav';
 import RightNav from '../pages/Shared/RightNav/RightNav';
 import { Outlet } from 'react-router-dom';
 
-const Main = () => {
+const ChefsLayout = () => {
     return (
         <div>
             <Header></Header>
 
             <Container>
-     
       <Row>
-        <Col lg={3}><LeftNav></LeftNav></Col>
-        <Col lg={6}><Outlet></Outlet></Col>
-        <Col lg={3}><RightNav></RightNav></Col>
+        <Col lg={8}><Outlet></Outlet></Col>
+        <Col lg={4}><RightNav></RightNav></Col>
       </Row>
     </Container>
               
-
               <Footer></Footer>
         </div>
     );
 };
 
-export default Main;
+export default ChefsLayout;

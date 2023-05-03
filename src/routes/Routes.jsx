@@ -12,7 +12,8 @@ const router = createBrowserRouter([
         children : [
             {
                 path : '/',
-                element :<Home></Home>
+                element :<Country></Country>,
+                loader : () => fetch('http://localhost:5000/chefs') 
             },
             {
                 path : '/country/:id',

@@ -3,7 +3,8 @@ import { Button, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const ChefCard = ({chef}) => {
-    const {_id,picture,name,years_of_experience,number_of_recipes,likes,view_recipes_button} = chef;
+    const {view_recipes_button,picture,_id,name,years_of_experience,number_of_recipes,likes} = chef
+    console.log(chef);
     return (
         <Card className='text-center' >
       <Card.Img variant="top" src={picture} />

@@ -1,17 +1,14 @@
-import React from 'react';
-// import { Button, Container, Nav, Navbar } from 'react-bootstrap';
-// import { Link } from 'react-router-dom';
-// import { FaUserCircle } from 'react-icons/fa';
-// import { AuthContext } from '../../../providers/Authprovider';
+import React, { useContext } from 'react';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { FaUserCircle } from 'react-icons/fa';
+import { AuthContext } from '../../../providers/Authprovider';
 
-
-
-const Header = () => {
-  // const {user} = useContext(AuthContext);
+const ChefNavber = () => {
+    const {user} = useContext(AuthContext);
     return (
-        <div className='mt-4'>
-            
-            {/* <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+        <Container>
+            <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
         <Navbar.Brand  href="#home">Chef And Food House</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -30,9 +27,9 @@ const Header = () => {
           </Nav>
         </Navbar.Collapse>
       </Container>
-    </Navbar> */}
-        </div>
+    </Navbar>
+        </Container>
     );
 };
 
-export default Header;
+export default ChefNavber;

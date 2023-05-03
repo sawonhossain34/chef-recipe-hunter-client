@@ -7,7 +7,7 @@ const Country = () => {
     const countryChefs = useLoaderData();
     return (
         <div>
-            <h3>This is Country : {countryChefs.length}</h3>
+            {id && <h3>This is Country : {countryChefs.length}</h3>}
             {
                 countryChefs.map(chef => <ChefCard
                 key={chef._id}

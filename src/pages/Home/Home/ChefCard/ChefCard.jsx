@@ -1,18 +1,25 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const ChefCard = ({chef}) => {
     const {_id,picture,name,years_of_experience,number_of_recipes,likes,view_recipes_button} = chef;
     return (
-        <Card >
+        <Card className='text-center' >
       <Card.Img variant="top" src={picture} />
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          {years_of_experience}
         </Card.Text>
-        <Button variant="primary">Show Details</Button>
+        <Card.Text>
+          {number_of_recipes}
+        </Card.Text>
+        <Card.Text>
+          {likes}
+        </Card.Text>
+
+        <Link to={`/chefs/${_id}`}><Button variant="primary">View Recipe Button</Button></Link>
       </Card.Body>
     </Card>
     );

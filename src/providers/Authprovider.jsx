@@ -7,7 +7,7 @@ export const AuthContext = createContext(null)
 const auth = getAuth(app);
 
 const Authprovider = ({children}) => {
-    const user = {displayName :"sawon"}
+    const user = null;
     const authInfo ={
         user
     }

@@ -13,14 +13,14 @@ const ChefNavber = () => {
     }
     return (
         <Container>
-            <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+            <Navbar collapseOnSelect expand="lg" bg="secondary" variant="light">
                 <Container className='m-5 '>
                     <Navbar.Brand href="#home">Chef And Food House</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="mx-auto">
-                            <Link to='/country/0'>Home</Link>
-                            <Nav.Link href="#pricing">Blog</Nav.Link>
+                        <Nav className="mx-auto text-decoration-none">
+                            <Link  to='/country/0'>Home</Link>
+                            <Link to = '/blog'>Blog</Link>
                         </Nav>
                         <Nav>
                             {user ?

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Nav, NavLink } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const LeftNav = () => {
@@ -19,9 +20,10 @@ const LeftNav = () => {
                 {
                 countries.map(country => <p
                 key={country.id}>
-                    <Link to={`/country/${country.id}`} className='text-decoration-none text-black'>{country.name}</Link>
+                    <Link  to={`/country/${country.id}`} className='text-decoration-none  text-black'>{country.name}</Link>
                 </p> )
             }
+            
             </div>
         </div>
     );

@@ -9,6 +9,7 @@ import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../layouts/ErrorPage";
+import Blog from "../pages/Blog/Blog";
 
 const router = createBrowserRouter([
     {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
                 loader : ({params}) => fetch(`https://chef-and-food-house-server-sawonhossain34.vercel.app/chefs/${params.id}`)
             }
         ]
-    }  
+    },
+    {
+        path :"blog",
+        element : <Blog></Blog>
+    } 
 ])
 export default router;

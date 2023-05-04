@@ -5,7 +5,7 @@ const LeftNav = () => {
     const [countries,setCountries] = useState([]);
 
     useEffect( () => {
-        fetch('http://localhost:5000/countries')
+        fetch('https://chef-and-food-house-server-sawonhossain34.vercel.app/countries')
         .then(res => res.json())
         .then(data => setCountries(data))
         .catch(error => console.error(error))

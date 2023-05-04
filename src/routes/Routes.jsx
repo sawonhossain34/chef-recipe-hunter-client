@@ -8,15 +8,16 @@ import LoginLayout from "../layouts/LoginLayout";
 import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
 import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../layouts/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element : <LoginLayout></LoginLayout>,
+        errorElement : <ErrorPage></ErrorPage>,
         children : [
             {
                 path : '/',
-                // element : <Navigate to= '/category/0'></Navigate>
                 element : <Navigate to='/country/0'></Navigate>
             },
             {
@@ -30,14 +31,13 @@ const router = createBrowserRouter([
         ]
     },
     {
-        // path : 'category',
         path : 'country',
         element : <Main></Main>,
         children : [
             {
                 path : ':id',
                 element : <Country></Country>,
-                loader : ({params}) => fetch(`http://localhost:5000/countries/${params.id}`)
+                loader : ({params}) => fetch(`https://chef-and-food-house-server-sawonhossain34.vercel.app/countries/${params.id}`)
             }
         ]
     },
@@ -48,9 +48,9 @@ const router = createBrowserRouter([
             {
                 path : ':id',
                 element : <PrivateRoute><Chefs></Chefs></PrivateRoute>,
-                loader : ({params}) => fetch(`http://localhost:5000/chefs/${params.id}`)
+                loader : ({params}) => fetch(`https://chef-and-food-house-server-sawonhossain34.vercel.app/chefs/${params.id}`)
             }
         ]
-    }
+    }  
 ])
 export default router;

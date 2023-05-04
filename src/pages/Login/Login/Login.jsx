@@ -2,12 +2,16 @@ import React, { useContext } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/Authprovider';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
+import Footer from '../../Shared/Footer/Footer';
 
 const Login = () => {
-    const {signInUser} = useContext(AuthContext);
+    const { signInUser,signInGoogle,signInGithub } = useContext(AuthContext);
+ 
+
     const navigate = useNavigate();
     const location = useLocation();
-    console.log('login page location',location);
+    console.log('login page location', location);
     const from = location?.state?.from?.pathname || '/country/0'
 
     const handleLogin = event => {
@@ -16,21 +20,43 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        console.log(email,password);
-
-        signInUser(email,password)
+        signInUser(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                navigate(from, { replace: true });    
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+    const handleGoogleSignIn =() => {
+        signInGoogle()
         .then(result => {
             const loggedUser = result.user;
             console.log(loggedUser);
-            navigate(from, {replace:true});
+            navigate(from, { replace: true });
         })
-        .catch(error => console.log(error))
+        .catch(error=> console.log(error))
+    }
+
+    const handleGithubSignIn = () => {
+        signInGithub()
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+            navigate(from, { replace: true });
+        })
+        .catch(error=> console.log(error))
+
     }
 
 
+
     return (
+        <>
         <Container className='w-25 mx-auto bg-secondary rounded border mt-5  p-5'>
-            <h4 className='text-center'>Login</h4>
+            <h4 className='text-center text-info'>Login</h4>
             <Form onSubmit={handleLogin}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
@@ -39,10 +65,10 @@ const Login = () => {
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" name="password" placeholder="Password"  required/>
+                    <Form.Control  type="password" name="password" placeholder="Password" required />
                 </Form.Group>
-                
-                <Button variant="primary" type="submit">
+
+                <Button variant="info" type="submit">
                     Login
                 </Button>
                 <br />
@@ -53,10 +79,20 @@ const Login = () => {
 
                 </Form.Text>
                 <Form.Text className='text-danger'>
-
+                    
                 </Form.Text>
+                <div>
+                    <h5 className='mt-4'>Another Login with</h5>
+                    <Button onClick={handleGoogleSignIn} className='mb-2 px-4 py-1 text-white' variant="outline-info"> <FaGoogle /> Login with Google</Button> <br />
+                    <Button onClick={handleGithubSignIn} className=' px-4 py-1  text-white' variant="outline-info "> <FaGithub /> Login with Github</Button>
+                </div>
             </Form>
+            
+
         </Container>
+        <Footer></Footer>
+        </>
+        
     );
 };
 

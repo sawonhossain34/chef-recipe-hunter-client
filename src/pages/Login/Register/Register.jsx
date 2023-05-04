@@ -1,10 +1,19 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/Authprovider';
+import Footer from '../../Shared/Footer/Footer';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 
 const Register = () => {
-    const {createUser} = useContext(AuthContext);
+    const {createUser,signInGoogle,signInGithub} = useContext(AuthContext);
+    // const [error, setError] = useState('');
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    console.log('login page location', location);
+    const from = location?.state?.from?.pathname || '/country/0'
+
 
     const hendleRegister = event => {
         event.preventDefault()
@@ -14,26 +23,64 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        console.log(name,photo,email,password);
+        // if(!/^[a-zA-Z0-9_]*$/.test(password)){
+        //     setError('please cheack password');
+        //     return;
+        // }
+
 
         createUser(email,password)
         .then(result => {
             const createdUser = result.user;
             console.log(createdUser);
+            navigate(from, { replace: true }); 
         })
-        .catch(error => console.log(error))
+        .catch(error => {
+            console.log(error);
+            
+        })
+    }
+    const handleGoogleSignIn =() => {
+        signInGoogle()
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+            navigate(from, { replace: true });
+
+        })
+        .catch(error=> {
+            console.log(error);
+        })
+    }
+
+    const handleGithubSignIn = () => {
+        signInGithub()
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+            navigate(from, { replace: true });
+
+        })
+        .catch(error=> {
+            console.log(error);
+
+
+
+        })
     }
 
 
     return (
+        <>
         <Container className='w-50 mx-auto bg-secondary rounded border mt-5 m-4 p-5'>
-            <h3 className='text-center'>Sign Up</h3>
+            <h3 className='text-center text-info'>Sign Up</h3>
+
             <Form onSubmit={hendleRegister}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Group className="mb-3" controlId="formBasicName">
                     <Form.Label>Name</Form.Label>
                     <Form.Control type="text" name='name' placeholder="Your name" required />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Group className="mb-3" controlId="formBasicPhoto">
                     <Form.Label>Photo URL</Form.Label>
                     <Form.Control type="text" name='photo' placeholder="Photo URL" required />
                 </Form.Group>
@@ -49,7 +96,7 @@ const Register = () => {
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" name='accept' label="Accept terms and condition" />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button variant="info" type="submit">
                     Register
                 </Button>
                 <br />
@@ -60,10 +107,17 @@ const Register = () => {
 
                 </Form.Text>
                 <Form.Text className='text-danger'>
-
+                    
                 </Form.Text>
+                <div>
+                    <h5 className='mt-4 '>Another Login with</h5>
+                    <Button onClick={handleGoogleSignIn} className='mb-2 px-4 py-1 text-white w-50' variant="outline-info"> <FaGoogle /> Login with Google</Button> <br />
+                    <Button onClick={handleGithubSignIn} className=' px-4 py-1 w-50 text-white' variant="outline-info "> <FaGithub /> Login with Github</Button>
+                </div>
             </Form>
         </Container>
+        <Footer></Footer>
+        </>
     );
 };
 

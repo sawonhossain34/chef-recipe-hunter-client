@@ -1,6 +1,6 @@
 import React from 'react';
 import error from '../assets/lovepik-404-page-error-png-image_400217866_wh1200.png';
-
+// error page // 
 const ErrorPage = () => {
     return (
         <div>

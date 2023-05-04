@@ -2,9 +2,8 @@ import React from 'react';
 import Header from '../pages/Shared/Header/Header';
 import Footer from '../pages/Shared/Footer/Footer';
 import { Col, Container, Row } from 'react-bootstrap';
-import RightNav from '../pages/Shared/RightNav/RightNav';
 import { Outlet } from 'react-router-dom';
-
+// page layout //
 const ChefsLayout = () => {
     return (
         <div>
@@ -12,10 +11,8 @@ const ChefsLayout = () => {
             <Container>
       <Row>
         <Col lg={12}><Outlet></Outlet></Col>
-        {/* <Col lg={4}><RightNav></RightNav></Col> */}
       </Row>
     </Container>
-              
               <Footer></Footer>
         </div>
     );

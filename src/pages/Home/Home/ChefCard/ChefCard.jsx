@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+// home page card // 
 const ChefCard = ({ chef }) => {
   const { picture, _id, name, years_of_experience, number_of_publications, number_of_recipes, likes } = chef;
   return (<>
@@ -22,9 +22,7 @@ const ChefCard = ({ chef }) => {
         <Link  to={`/chefs/${_id}`}><Button  variant="primary">View Recipe Button</Button></Link>
       </Card.Body>
     </Card>
-
   </>
-
   );
 };
 

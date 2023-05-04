@@ -7,9 +7,6 @@ import ChefNavber from '../pages/Shared/ChefNavber/ChefNavber';
 import Banner from '../pages/Home/Banner/Banner';
 import Slider from '../pages/Slider/Slider';
 import ShowProducts from '../pages/ShowProducts/ShowProducts';
-// import ShowProducts from '../pages/Home/ShowProducts/ShowProducts';
-
-
 
 const Main = () => {
     return (
@@ -26,9 +23,6 @@ const Main = () => {
     </Container>
     <Slider></Slider>
     <ShowProducts></ShowProducts>
-    
-              
-
               <Footer></Footer>
         </div>
     );

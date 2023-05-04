@@ -10,7 +10,7 @@ import Register from "../pages/Login/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../layouts/ErrorPage";
 import Blog from "../pages/Blog/Blog";
-
+// all route section //
 const router = createBrowserRouter([
     {
         path: '/',

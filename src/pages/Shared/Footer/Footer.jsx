@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-
+// footer seation //
 const Footer = () => {
     return (
         <div className='bg-dark text-white'>

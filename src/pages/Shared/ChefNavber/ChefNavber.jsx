@@ -6,7 +6,7 @@ import { AuthContext } from '../../../providers/Authprovider';
 
 const ChefNavber = () => {
     const { user, logOut } = useContext(AuthContext);
-
+// log out function
     const handleLogOut = () => {
         logOut()
             .catch(error => console.log(error))

@@ -6,7 +6,9 @@ import Footer from '../Shared/Footer/Footer';
 const Blog = () => {
     return (
        <>
+       {/* // nav ber add */}
        <ChefNavber></ChefNavber>
+       {/* // blog page add  */}
         <Container className='mt-5'>
             <h3 className='text-center'>Blog Page</h3>
             <Accordion defaultActiveKey="0">
@@ -41,6 +43,7 @@ To pass props between components, you can add them when the component is called,
       </Accordion.Item>
     </Accordion>
         </Container>
+        {/* //footer add  */}
         <Footer></Footer>
        </>
     );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Carousel, Container } from 'react-bootstrap';
-
+// home page slide 
 const Slider = () => {
     return (
         <Container className='mt-5 mb-5'>
@@ -61,7 +61,6 @@ const Slider = () => {
                         }}
                         alt="Third slide"
                     />
-
                     <Carousel.Caption>
                         <h3>Berger</h3>
                         <p>

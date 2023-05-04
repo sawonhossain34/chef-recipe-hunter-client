@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import spicy from "../../assets/istockphoto-579767430-612x612.jpg";
-
+// other home seation 
 const ShowProducts = () => {
     return (
         <div className='bg-danger rounded'>

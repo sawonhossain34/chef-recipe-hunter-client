@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Nav, NavLink } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const LeftNav = () => {
@@ -12,7 +11,6 @@ const LeftNav = () => {
         .catch(error => console.error(error))
     } ,[])
 
-
     return (
         <div>
             <h3>All Countries</h3>
@@ -23,7 +21,6 @@ const LeftNav = () => {
                     <Link  to={`/country/${country.id}`} className='text-decoration-none  text-black'>{country.name}</Link>
                 </p> )
             }
-            
             </div>
         </div>
     );

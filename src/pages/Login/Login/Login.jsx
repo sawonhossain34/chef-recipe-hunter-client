@@ -4,11 +4,10 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/Authprovider';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import Footer from '../../Shared/Footer/Footer';
-
+// login function //
 const Login = () => {
     const { signInUser,signInGoogle,signInGithub } = useContext(AuthContext);
- 
-
+ // use hook react // 
     const navigate = useNavigate();
     const location = useLocation();
     console.log('login page location', location);
@@ -48,10 +47,7 @@ const Login = () => {
             navigate(from, { replace: true });
         })
         .catch(error=> console.log(error))
-
     }
-
-
 
     return (
         <>
@@ -87,8 +83,6 @@ const Login = () => {
                     <Button onClick={handleGithubSignIn} className=' px-4 py-1  text-white' variant="outline-info "> <FaGithub /> Login with Github</Button>
                 </div>
             </Form>
-            
-
         </Container>
         <Footer></Footer>
         </>

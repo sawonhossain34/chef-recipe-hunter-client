@@ -59,17 +59,12 @@ const Register = () => {
             const loggedUser = result.user;
             console.log(loggedUser);
             navigate(from, { replace: true });
-
         })
         .catch(error=> {
             console.log(error);
-
-
-
         })
     }
-
-
+// register section //
     return (
         <>
         <Container className='w-50 mx-auto bg-secondary rounded border mt-5 m-4 p-5'>

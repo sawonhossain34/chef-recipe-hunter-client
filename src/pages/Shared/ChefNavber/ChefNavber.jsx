@@ -15,12 +15,12 @@ const ChefNavber = () => {
         <Container>
             <Navbar collapseOnSelect expand="lg" bg="secondary" variant="light">
                 <Container className='m-5 '>
-                    <Navbar.Brand href="#home">Chef And Food House</Navbar.Brand>
+                    <Navbar.Brand className='text-info' href="#home"><h3>Chef And Food House</h3></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="mx-auto text-decoration-none">
-                            <Link  to='/country/0'>Home</Link>
-                            <Link to = '/blog'>Blog</Link>
+                        <Nav className="mx-auto ">
+                            <Link className='text-info text-decoration-none '  to='/country/0'>Home</Link>
+                            <Link  className='text-info text-decoration-none ms-3' to = '/blog'>Blog</Link>
                         </Nav>
                         <Nav>
                             {user ?
@@ -35,7 +35,7 @@ const ChefNavber = () => {
                             :
                                 <FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle>}
 
-                            {user ? <Button onClick={handleLogOut} variant="secondary">Logout</Button> :
+                            {user ? <Button className='bg-info ms-3' onClick={handleLogOut} variant="secondary">Logout</Button> :
                                 <Link to='/login'><Button variant="secondary">Login</Button></Link>
                             }
 

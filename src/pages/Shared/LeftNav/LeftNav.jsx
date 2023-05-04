@@ -16,9 +16,9 @@ const LeftNav = () => {
     return (
         <div>
             <h3>All Countries</h3>
-            <div className='ps-4 '>
+            <div className='ps-4 bg-secondary p-3 rounded '>
                 {
-                countries.map(country => <p
+                countries.map(country => <p 
                 key={country.id}>
                     <Link  to={`/country/${country.id}`} className='text-decoration-none  text-black'>{country.name}</Link>
                 </p> )

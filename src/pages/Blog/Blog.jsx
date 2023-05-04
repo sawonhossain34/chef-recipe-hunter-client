@@ -13,7 +13,7 @@ const Blog = () => {
       <Accordion.Item eventKey="0">
         <Accordion.Header>1. Tell us the differences between uncontrolled and controlled components.</Accordion.Header>
         <Accordion.Body>
-        The text input has the value attribute set as the components state ‘text’. This is very important so that the input component’s value will always be in sync with the components state ‘text’ s value.
+        The text input has the value attribute set as the components state text. This is very important so that the input component's value will always be in sync with the components state text s value.
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="1">

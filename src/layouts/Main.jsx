@@ -5,6 +5,9 @@ import LeftNav from '../pages/Shared/LeftNav/LeftNav';
 import { Outlet } from 'react-router-dom';
 import ChefNavber from '../pages/Shared/ChefNavber/ChefNavber';
 import Banner from '../pages/Home/Banner/Banner';
+import Slider from '../pages/Slider/Slider';
+import ShowProducts from '../pages/ShowProducts/ShowProducts';
+// import ShowProducts from '../pages/Home/ShowProducts/ShowProducts';
 
 
 
@@ -21,6 +24,8 @@ const Main = () => {
         <Col lg={9}><Outlet></Outlet></Col>
       </Row>
     </Container>
+    <Slider></Slider>
+    <ShowProducts></ShowProducts>
     
               
 

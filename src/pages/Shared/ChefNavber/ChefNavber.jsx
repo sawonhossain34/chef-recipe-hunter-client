@@ -36,7 +36,7 @@ const ChefNavber = () => {
                                 <FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle>}
 
                             {user ? <Button className='bg-info ms-3' onClick={handleLogOut} variant="secondary">Logout</Button> :
-                                <Link to='/login'><Button variant="secondary">Login</Button></Link>
+                                <Link to='/login'><Button className='bg-info ms-3' variant="secondary">Login</Button></Link>
                             }
 
                         </Nav>

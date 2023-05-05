@@ -6,9 +6,17 @@ import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
 //chef recipe details //
 const Chefs = () => {
-    const chef = useLoaderData();
-    const {_id,picture,name,years_of_experience,number_of_recipes,likes,view_recipes_button,category_id,cook_details} = chef;
-    return (
+  const chef = useLoaderData();
+
+
+
+  const { _id, picture, name, years_of_experience, number_of_recipes, likes, view_recipes_button, category_id, cook_details } = chef;
+  
+  const handleClick = event => {
+    event.currentTarget.disabled = true;
+  };
+
+  return (
     <Container fluid className="px-5 py-3">
       <Row className="align-items-center mb-3">
         <Col md={3}>
@@ -17,7 +25,7 @@ const Chefs = () => {
         <Col md={9}>
           <h2 className="mb-0">{name}</h2>
           <p className="text-muted mb-0">year of experience {years_of_experience}</p>
-        
+
           <Rating style={{ maxWidth: 100 }} readOnly />{cook_details?.rating}
 
         </Col>
@@ -27,40 +35,40 @@ const Chefs = () => {
       <Row>
         <Col md={4} className="mb-3">
           <Card className='bg-secondary p-3' >
-          <h2 className="mb-0">{cook_details?.recipeName}</h2>
+            <h2 className="mb-0">{cook_details?.recipeName}</h2>
             <Card.Body>
               <Card.Text>
-              {cook_details?.ingredients}
+                {cook_details?.ingredients}
               </Card.Text>
-              <Button variant="info">Favorite{cook_details?.favorite}</Button>
+              <Button variant="info" onClick={handleClick}>Favorite{cook_details?.favorite}</Button>
             </Card.Body>
           </Card>
         </Col>
         <Col md={4} className="mb-3">
           <Card className='bg-secondary  p-3'>
-          <h2 className="mb-0">{cook_details?.recipeName}</h2>
-            <Card.Body>
-              <Card.Text>
-              {cook_details?.ingredients}
-              </Card.Text>
-              <Button variant="info">Favorite{cook_details?.favorite}</Button>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={4} className="mb-3">
-          <Card className='bg-secondary  p-3'> 
-          <h2 className="mb-0">{cook_details?.recipeName}</h2>
+            <h2 className="mb-0">{cook_details?.recipeName}</h2>
             <Card.Body>
               <Card.Text>
                 {cook_details?.ingredients}
               </Card.Text>
-              <Button variant="info" >Favorite{cook_details?.favorite}</Button>
+              <Button variant="info" onClick={handleClick}>Favorite{cook_details?.favorite}</Button>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col md={4} className="mb-3">
+          <Card className='bg-secondary  p-3'>
+            <h2 className="mb-0">{cook_details?.recipeName}</h2>
+            <Card.Body>
+              <Card.Text>
+                {cook_details?.ingredients}
+              </Card.Text>
+              <Button variant="info" onClick={handleClick} >Favorite{cook_details?.favorite}</Button>
             </Card.Body>
           </Card>
         </Col>
       </Row>
     </Container>
-    );
+  );
 };
 
 export default Chefs;

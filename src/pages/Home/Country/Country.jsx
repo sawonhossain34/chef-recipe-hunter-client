@@ -9,7 +9,7 @@ const Country = () => {
         <div>
          {/* pass details */}
 
-            <div>
+            <div className='row'>
                 {
                     countryChefs.map(chef => <ChefCard
                         key={chef._id}

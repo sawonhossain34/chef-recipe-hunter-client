@@ -9,8 +9,8 @@ const Blog = () => {
        {/* // nav ber add */}
        <ChefNavber></ChefNavber>
        {/* // blog page add  */}
-        <Container className='mt-5'>
-            <h3 className='text-center'>Blog Page</h3>
+        <Container className='mt-5 bg-info mb-5'>
+            <h3 className='text-center mb-5'>Blog Page</h3>
             <Accordion defaultActiveKey="0">
       <Accordion.Item eventKey="0">
         <Accordion.Header>1. Tell us the differences between uncontrolled and controlled components.</Accordion.Header>

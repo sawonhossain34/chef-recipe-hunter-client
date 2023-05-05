@@ -3,6 +3,7 @@ import { Button, Container, Image, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FaUserCircle } from 'react-icons/fa';
 import { AuthContext } from '../../../providers/Authprovider';
+import ActiveLink from '../../../ActiveLink/ActiveLink';
 
 const ChefNavber = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -19,8 +20,8 @@ const ChefNavber = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto ">
-                            <Link className='text-info text-decoration-none '  to='/country/0'>Home</Link>
-                            <Link  className='text-info text-decoration-none ms-3' to = '/blog'>Blog</Link>
+                            <ActiveLink className='text-info  '  to='/country/0'>Home</ActiveLink>
+                            <ActiveLink  className='text-info  ms-3' to = '/blog'>Blog</ActiveLink>
                         </Nav>
                         <Nav>
                             {user ?

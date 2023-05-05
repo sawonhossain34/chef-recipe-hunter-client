@@ -7,12 +7,14 @@ import { FaGithub, FaGoogle } from 'react-icons/fa';
 
 const Register = () => {
     const {createUser,signInGoogle,signInGithub} = useContext(AuthContext);
-    // const [error, setError] = useState('');
 
     const navigate = useNavigate();
     const location = useLocation();
     console.log('login page location', location);
     const from = location?.state?.from?.pathname || '/country/0'
+
+    // const [error, setError] = useState('');
+
 
 
     const hendleRegister = event => {
@@ -37,7 +39,6 @@ const Register = () => {
         })
         .catch(error => {
             console.log(error);
-            
         })
     }
     const handleGoogleSignIn =() => {
@@ -102,7 +103,6 @@ const Register = () => {
 
                 </Form.Text>
                 <Form.Text className='text-danger'>
-                    
                 </Form.Text>
                 <div>
                     <h5 className='mt-4 '>Another Login with</h5>

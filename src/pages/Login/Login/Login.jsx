@@ -1,9 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/Authprovider';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import Footer from '../../Shared/Footer/Footer';
+
 // login function //
 const Login = () => {
     const { signInUser,signInGoogle,signInGithub } = useContext(AuthContext);
@@ -12,6 +13,9 @@ const Login = () => {
     const location = useLocation();
     console.log('login page location', location);
     const from = location?.state?.from?.pathname || '/country/0'
+
+    // const [error, setError] = useState('');
+
 
     const handleLogin = event => {
         event.preventDefault()
@@ -23,10 +27,12 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                navigate(from, { replace: true });    
+                navigate(from, { replace: true }); 
+                form.reset('');
             })
             .catch(error => {
                 console.log(error);
+                // setError("email and password don't mass ");
             })
     }
     const handleGoogleSignIn =() => {
@@ -53,6 +59,7 @@ const Login = () => {
         <>
         <Container className='w-25 mx-auto bg-secondary rounded border mt-5  p-5'>
             <h4 className='text-center text-info'>Login</h4>
+            {/* <p className='text-danger'>{error}</p> */}
             <Form onSubmit={handleLogin}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
@@ -75,7 +82,7 @@ const Login = () => {
 
                 </Form.Text>
                 <Form.Text className='text-danger'>
-                    
+
                 </Form.Text>
                 <div>
                     <h5 className='mt-4'>Another Login with</h5>

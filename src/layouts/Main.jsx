@@ -16,7 +16,6 @@ const Main = () => {
             <Banner></Banner>
 
             <Container>
-     
       <Row >
         <Col lg={3}><LeftNav></LeftNav></Col>
         <Col lg={9}><Outlet></Outlet></Col>

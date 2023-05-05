@@ -3,7 +3,8 @@ import { Carousel, Container } from 'react-bootstrap';
 // home page slide 
 const Slider = () => {
     return (
-        <Container className='mt-5 mb-5'>
+        <Container className='mt-5 pt-5 mb-5' style={{backgroundColor:'rgba(255, 115, 90, 0.7)'}}>
+            <h2 className='text-center mb-5'> 25% Discount Berger</h2>
             <Carousel>
                 <Carousel.Item>
                     <img

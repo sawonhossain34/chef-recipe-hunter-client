@@ -17,6 +17,9 @@ const Chefs = () => {
         <Col md={9}>
           <h2 className="mb-0">{name}</h2>
           <p className="text-muted mb-0">year of experience {years_of_experience}</p>
+        
+          <Rating style={{ maxWidth: 100 }} readOnly />{cook_details?.rating}
+
         </Col>
         <Link className='text-center' to={`/country/${category_id}`}><Button variant="danger"><FaArrowLeft></FaArrowLeft> Go Back All Chef</Button></Link>
       </Row>
@@ -26,11 +29,10 @@ const Chefs = () => {
           <Card className='bg-secondary p-3' >
           <h2 className="mb-0">{cook_details?.recipeName}</h2>
             <Card.Body>
-              <Card.Title><Rating style={{ maxWidth: 100 }} readOnly />{cook_details?.rating}</Card.Title>
               <Card.Text>
               {cook_details?.ingredients}
               </Card.Text>
-              <Button variant="primary">{cook_details?.favorite}</Button>
+              <Button variant="info">Favorite{cook_details?.favorite}</Button>
             </Card.Body>
           </Card>
         </Col>
@@ -38,11 +40,10 @@ const Chefs = () => {
           <Card className='bg-secondary  p-3'>
           <h2 className="mb-0">{cook_details?.recipeName}</h2>
             <Card.Body>
-              <Card.Title><Rating style={{ maxWidth: 100 }} readOnly />{cook_details?.rating}</Card.Title>
               <Card.Text>
               {cook_details?.ingredients}
               </Card.Text>
-              <Button variant="primary">{cook_details?.favorite}</Button>
+              <Button variant="info">Favorite{cook_details?.favorite}</Button>
             </Card.Body>
           </Card>
         </Col>
@@ -50,11 +51,10 @@ const Chefs = () => {
           <Card className='bg-secondary  p-3'> 
           <h2 className="mb-0">{cook_details?.recipeName}</h2>
             <Card.Body>
-              <Card.Title><Rating style={{ maxWidth: 100 }} readOnly />{cook_details?.rating}</Card.Title>
               <Card.Text>
                 {cook_details?.ingredients}
               </Card.Text>
-              <Button variant="primary">{cook_details?.favorite}</Button>
+              <Button variant="info" >Favorite{cook_details?.favorite}</Button>
             </Card.Body>
           </Card>
         </Col>

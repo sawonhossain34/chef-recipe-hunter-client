@@ -10,6 +10,7 @@ import Register from "../pages/Login/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../layouts/ErrorPage";
 import Blog from "../pages/Blog/Blog";
+// const LazyBlog = React.lazy(() => import('../pages/Blog/Blog'));
 // all route section //
 const router = createBrowserRouter([
     {
@@ -56,6 +57,7 @@ const router = createBrowserRouter([
     {
         path :"blog",
         element : <Blog></Blog>
+        // element : <LazyBlog />
     } 
 ])
 export default router;

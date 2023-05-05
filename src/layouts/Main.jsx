@@ -5,23 +5,25 @@ import LeftNav from '../pages/Shared/LeftNav/LeftNav';
 import { Outlet } from 'react-router-dom';
 import ChefNavber from '../pages/Shared/ChefNavber/ChefNavber';
 import Banner from '../pages/Home/Banner/Banner';
-import Slider from '../pages/Slider/Slider';
+// import Slider from '../pages/Slider/Slider';
+const LazySlider = React.lazy(() => import('../pages/Slider/Slider'));
 import ShowProducts from '../pages/ShowProducts/ShowProducts';
 
 const Main = () => {
     return (
-        <div>
+        <div className=''>
             <ChefNavber></ChefNavber>
             <Banner></Banner>
 
             <Container>
      
-      <Row>
+      <Row >
         <Col lg={3}><LeftNav></LeftNav></Col>
         <Col lg={9}><Outlet></Outlet></Col>
       </Row>
     </Container>
-    <Slider></Slider>
+    {/* <Slider></Slider> */}
+    <LazySlider></LazySlider>
     <ShowProducts></ShowProducts>
               <Footer></Footer>
         </div>

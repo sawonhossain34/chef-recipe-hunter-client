@@ -20,7 +20,7 @@ const ChefCard = ({ chef }) => {
             {likes}
           </Card.Text>
 
-          <Link to={`/chefs/${_id}`}><Button variant="primary">View Recipe Button</Button></Link>
+          <Link to={`/chefs/${_id}`}><Button style={{backgroundColor:'rgb(255, 99, 71)'}} variant="primary">View Recipe Button</Button></Link>
         </Card.Body>
       </Card>
     </div>

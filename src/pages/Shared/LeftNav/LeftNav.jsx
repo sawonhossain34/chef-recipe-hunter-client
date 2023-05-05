@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import ActiveLink from '../../../ActiveLink/ActiveLink';
 
 const LeftNav = () => {
     const [countries,setCountries] = useState([]);
@@ -12,16 +13,16 @@ const LeftNav = () => {
     } ,[])
 
     return (
-        <div>
+        <div  style={{backgroundColor:'rgba(255, 151, 144, 0.3)'}}>
             <h3>All Countries</h3>
-            <div className='ps-4 bg-secondary p-3 rounded '>
+            <nav className='ps-4  p-3 rounded ' style={{backgroundColor:'rgba(255, 214, 223, 0.3)'}}>
                 {
                 countries.map(country => <p 
                 key={country.id}>
-                    <Link  to={`/country/${country.id}`} className='text-decoration-none  text-black'>{country.name}</Link>
+                    <ActiveLink  to={`/country/${country.id}`} className='text-decoration-none  text-black'>{country.name}</ActiveLink>
                 </p> )
             }
-            </div>
+            </nav>
         </div>
     );
 };
